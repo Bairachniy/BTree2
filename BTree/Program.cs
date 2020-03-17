@@ -23,14 +23,8 @@ namespace BTree
             binaryTree.Add(16);
 
             binaryTree.PrintTree();
-
-            Console.WriteLine(new string('-', 40));
-            binaryTree.Remove(3);
-            binaryTree.PrintTree();
-
-            Console.WriteLine(new string('-', 40));
-            binaryTree.Remove(8);
-            binaryTree.PrintTree();
+            binaryTree.Sum();
+            Console.WriteLine(binaryTree.sum);
 
             Console.ReadLine();
         }

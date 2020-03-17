@@ -12,7 +12,7 @@ namespace BTree
     /// <typeparam name="T">Тип даних вузлів</typeparam>
     public class BinaryTree<T> where T : IComparable
     {
-        public T Summa { get; set; }
+        public int sum;
         /// <summary>
         /// Корінь бінарного дерева
         /// </summary>
@@ -195,17 +195,20 @@ namespace BTree
                 PrintTree(startNode.RightNode, indent, Side.Right);
             }
         }
-        //private void Sum(BinaryTreeNode<T> startNode, Side? side = null)
-        //{
-        //    if (startNode != null)
-        //    {
-        //        var nodeSide = side == null ? "+" : side == Side.Left ? "L" : "R";
-        //         Summa += startNode.Data;
-        //        //рекурсивний виклик для лівої та правої гілок
-        //        Sum(startNode.LeftNode, Side.Left);
-        //        Sum(startNode.RightNode, Side.Right);
-        //    }
-        //}
+        public void Sum()
+        {
+            Sum(RootNode);
+        }
+        private void Sum(BinaryTreeNode<T> startNode, Side? side = null)
+        {
+            if (startNode != null)
+            {
+                sum += int.Parse(startNode.Data.ToString());
+                //рекурсивний виклик для лівої та правої гілок
+                Sum(startNode.LeftNode, Side.Left);
+                Sum(startNode.RightNode, Side.Right);
+            }
+        }
     }
 
 
